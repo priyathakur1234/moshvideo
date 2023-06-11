@@ -14,11 +14,12 @@ class App extends Component {
         { id:4,value:0}
     ]
   };
-  handleIncrement=counter=>{
-    const counters=[...this.state.counters];
-    counters[0]={...counter};
-    counters[0].value++;
-    console.log(this.state.counters[0]);
+  handleIncrement=(counter)=>{
+    console.log(counter)
+    let counters=[...this.state.counters];
+    const index=counters.indexOf(counter);
+    counters[index].value++;
+    this.setState({counters})
   
    
   
